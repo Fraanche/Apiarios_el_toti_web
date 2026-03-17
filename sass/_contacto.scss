@@ -1,0 +1,38 @@
+// sass/_contacto.scss
+
+/* Estilo para los campos del formulario (Inputs) */
+.custom-input {
+  background-color: $color-fondo-claro; // Color marfil de fondo
+  border: 1px solid rgba(184, 134, 11, 0.3); // Borde dorado suavecito
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  color: $color-texto-oscuro;
+  transition: $transicion;
+
+  // Cuando el usuario hace clic para escribir (Focus)
+  &:focus {
+    background-color: #ffffff;
+    border-color: $color-nav; // Borde dorado fuerte
+    box-shadow: 0 0 0 0.25rem rgba(184, 134, 11, 0.25); // Resplandor dorado
+    outline: 0;
+  }
+
+  // Para el texto que dice "Escribí tu consulta acá..." (Placeholder)
+  &::placeholder {
+    color: #a0938b;
+    opacity: 0.8;
+  }
+}
+
+/* Animación sutil para los iconos de información */
+.contact-info-card {
+  transition: $transicion;
+
+  .icon-circle {
+    transition: transform 0.3s ease;
+  }
+
+  &:hover .icon-circle {
+    transform: scale(1.15) rotate(5deg);
+  }
+}

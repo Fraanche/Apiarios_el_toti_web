@@ -1,0 +1,53 @@
+// sass/_productos.scss
+
+.product-card {
+  /* 1. Borde sutil para TODAS las tarjetas */
+  border: 1px solid rgba(184, 134, 11, 0.2) !important;
+  border-radius: 15px !important;
+
+  /* 2. Fondo blanco puro: Esto hace que resalten perfectamente contra el fondo crema de la web */
+  background-color: #ffffff !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05) !important;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+  overflow: hidden !important;
+
+  /* 3. ¡Recuperamos el borde del producto destacado! */
+  &.border-warning {
+    border: 2px solid $color-nav !important; /* Borde más grueso y del color de tu marca */
+  }
+
+  // Efecto 3D al pasar el mouse
+  &:hover {
+    transform: translateY(-12px) !important;
+    box-shadow: 0 15px 30px rgba(184, 134, 11, 0.2) !important;
+    z-index: 10;
+  }
+
+  // Contenedor de la imagen
+  .img-wrapper {
+    overflow: hidden;
+    height: 220px;
+    background-color: transparent; // Para que se funda con la tarjeta blanca
+
+    img {
+      transition: transform 0.5s ease !important;
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+      padding: 1rem;
+    }
+  }
+
+  // Efecto zoom en la foto
+  &:hover .img-wrapper img {
+    transform: scale(1.1) !important;
+  }
+}
+
+// Estilo especial para la etiqueta "Más vendido"
+.rounded-bl-3 {
+  border-bottom-left-radius: 10px;
+  background-color: $color-nav !important; // Dorada
+  color: white !important;
+}

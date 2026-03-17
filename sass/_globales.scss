@@ -1,0 +1,108 @@
+// sass/_globales.scss
+
+/* --- CONFIGURACIÓN BASE --- */
+body {
+  background-color: $color-fondo;
+  color: $color-texto;
+  font-family: $fuente-principal;
+}
+
+.bg-soft-ivory {
+  background-color: $color-fondo-claro;
+}
+
+/* --- BOTONES GLOBALES (Ahora funcionan en toda la página) --- */
+.btn-miel {
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 10px 25px;
+  background-color: $color-nav;
+  color: white;
+  border-radius: 50px;
+  border: none;
+  transition: $transicion;
+
+  &:hover {
+    background-color: #926b09;
+    transform: translateY(-2px);
+    color: white;
+  }
+}
+
+// Botón secundario (Para "Conócenos")
+.btn-outline-miel {
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 10px 25px;
+  background-color: transparent;
+  color: $color-texto-oscuro;
+  border: 2px solid $color-nav;
+  border-radius: 50px;
+  transition: $transicion;
+
+  &:hover {
+    background-color: $color-nav;
+    color: white;
+    transform: translateY(-2px);
+  }
+}
+
+/* --- NAVBAR (Menú) --- */
+.navbar {
+  padding: 15px 0;
+  background-color: $color-fondo-claro;
+  box-shadow: $sombra-suave;
+
+  .nav-link {
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: $color-texto-oscuro;
+    padding: 0 15px;
+    transition: $transicion;
+
+    &:hover,
+    &.active {
+      color: $color-nav;
+      font-weight: 700;
+    }
+  }
+}
+
+/* --- FOOTER ORGÁNICO --- */
+.footer-organic {
+  background-color: $color-texto-oscuro;
+  color: $color-fondo; // <--- ¡AQUÍ ESTÁ! Reciclamos el color crema base
+  margin-top: auto;
+  padding: 1.5rem 0;
+
+  p {
+    margin: 0;
+  }
+}
+
+/* --- BOTÓN WHATSAPP --- */
+.whatsapp-float {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 9999;
+  width: 60px;
+  height: 60px;
+  background-color: $color-whatsapp;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: $sombra-suave;
+  transition: $transicion;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  img {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+  }
+}
