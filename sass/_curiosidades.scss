@@ -1,0 +1,92 @@
+// sass/_curiosidades.scss
+
+.flip-card {
+  background-color: transparent;
+  height: 220px; // Altura fija para todas las tarjetas
+  perspective: 1000px; // Profundidad 3D
+  cursor: pointer;
+
+  /* Contenedor que gira */
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1); // Giro suave
+    transform-style: preserve-3d;
+  }
+
+  /* Clase que se activa con el clic */
+  &.is-flipped .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+
+  /* Caras de la tarjeta (Frente y Dorso) */
+  .flip-card-front,
+  .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; // Oculta la parte de atrás cuando gira
+    border-radius: 20px;
+  }
+
+  /* --- CARA DE ADELANTE (PREGUNTA) --- */
+  .flip-card-front {
+    background-color: #ffffff;
+    border: 2px solid rgba(184, 134, 11, 0.15);
+    transition: border-color 0.3s ease;
+
+    // El contenedor Flexbox que alinea la pregunta y la abeja
+    .flip-card-front-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center; // Ahora centra el texto perfectamente en el medio
+      align-items: center;
+      height: 100%;
+      padding: 1.5rem;
+      position: relative; // Fundamental para poder anclar la abeja abajo
+
+      h5 {
+        font-size: 1.1rem;
+        line-height: 1.4;
+        margin: 0; // Sacamos los márgenes viejos
+        padding-bottom: 1.5rem; // Le da un respiro al texto para que no pise a la abeja
+      }
+
+      .click-hint {
+        position: absolute; // Saca a la abeja del medio y la deja libre
+        bottom: 1rem; // La ancla a esta distancia exacta del borde inferior
+        opacity: 0.5;
+        transition: opacity 0.3s ease;
+      }
+    }
+  }
+
+  /* --- CARA DE ATRÁS (RESPUESTA) --- */
+  .flip-card-back {
+    background-color: $color-nav; // Dorado
+    color: #ffffff;
+    transform: rotateY(180deg); // Ya está dada vuelta
+    border: 2px solid $color-nav;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+
+    p {
+      font-size: 1.05rem;
+      line-height: 1.5;
+    }
+  }
+
+  /* Efecto Hover (al pasar el mouse) */
+  &:hover .flip-card-front {
+    border-color: $color-nav; // Borde dorado fuerte
+
+    .click-hint {
+      opacity: 1; // La abeja se ilumina
+    }
+  }
+}

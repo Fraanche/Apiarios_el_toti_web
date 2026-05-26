@@ -254,4 +254,93 @@ body {
 }
 .contact-info-card:hover .icon-circle {
   transform: scale(1.15) rotate(5deg);
+}
+
+.flip-card {
+  background-color: transparent;
+  height: 220px;
+  perspective: 1000px;
+  cursor: pointer;
+  /* Contenedor que gira */
+}
+.flip-card .flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transform-style: preserve-3d;
+}
+.flip-card {
+  /* Clase que se activa con el clic */
+}
+.flip-card.is-flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+.flip-card {
+  /* Caras de la tarjeta (Frente y Dorso) */
+}
+.flip-card .flip-card-front,
+.flip-card .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 20px;
+}
+.flip-card {
+  /* --- CARA DE ADELANTE (PREGUNTA) --- */
+}
+.flip-card .flip-card-front {
+  background-color: #ffffff;
+  border: 2px solid rgba(184, 134, 11, 0.15);
+  transition: border-color 0.3s ease;
+}
+.flip-card .flip-card-front .flip-card-front-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 1.5rem;
+  position: relative;
+}
+.flip-card .flip-card-front .flip-card-front-content h5 {
+  font-size: 1.1rem;
+  line-height: 1.4;
+  margin: 0;
+  padding-bottom: 1.5rem;
+}
+.flip-card .flip-card-front .flip-card-front-content .click-hint {
+  position: absolute;
+  bottom: 1rem;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+.flip-card {
+  /* --- CARA DE ATRÁS (RESPUESTA) --- */
+}
+.flip-card .flip-card-back {
+  background-color: #b8860b;
+  color: #ffffff;
+  transform: rotateY(180deg);
+  border: 2px solid #b8860b;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+.flip-card .flip-card-back p {
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+.flip-card {
+  /* Efecto Hover (al pasar el mouse) */
+}
+.flip-card:hover .flip-card-front {
+  border-color: #b8860b;
+}
+.flip-card:hover .flip-card-front .click-hint {
+  opacity: 1;
 }/*# sourceMappingURL=style.css.map */
